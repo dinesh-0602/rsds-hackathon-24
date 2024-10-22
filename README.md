@@ -70,6 +70,16 @@ choose `ml.g4dn.xlarge` as Instance, set storage to 50GB, click Run Space button
 2. **Monitor Training with TensorBoard**
    - While training is ongoing, use Weights & Biases (wandb) to sync the TensorBoard file and monitor progress in real-time.
 
+Do the following
+```bash
+wandb init
+```
+- click the link to get API key
+
+```bash
+cd <path to experiment>
+wandb sync
+```
 ## Monitoring and Evaluation
 
 Participants are required to provide a notebook that demonstrates how to:
