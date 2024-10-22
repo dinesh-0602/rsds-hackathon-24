@@ -85,7 +85,8 @@ wandb sync
 Participants are required to provide a notebook that demonstrates how to:
 - Run the trained model.
 - Retrieve data from Hugging Face datasets.
-- Calculate performance metrics, specifically Intersection over Union (IoU).
+- Calculate performance metrics, specifically Intersection over Union (IoU). The implementation details is provided below.
+- Test split will not be provided, but will functionally the same as the training / validation data format.
 
 ### IoU Metric Calculation
 
