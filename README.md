@@ -3,13 +3,14 @@
 This repository is intended for setups required for RSDS Hackathon **Data Driven AI for Remote Sensing**. It leverage and AWS SageMaker for building remote sensing AI applications. This README provides a comprehensive guide to get you started with the project setup, training, and evaluation criteria for hackathon.
 
 ## Table of Contents
-- [Project Overview](#project-overview)
-- [Getting Started](#getting-started)
-- [Installation Steps](#installation-steps)
-- [Training Process](#training-process)
-- [Monitoring and Evaluation](#monitoring-and-evaluation)
-- [Contact Details](#contact-details)
-- [Acknowledgements](#acknowledgements)
+- [Data Driven AI for Remote Sensing](#data-driven-ai-for-remote-sensing)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Getting Started](#getting-started)
+  - [Installation Steps after Jupyterlab starts](#installation-steps-after-jupyterlab-starts)
+  - [Training Process](#training-process)
+  - [Monitoring and Evaluation](#monitoring-and-evaluation)
+    - [IoU Metric Calculation](#iou-metric-calculation)
 
 ## Project Overview
 
@@ -58,8 +59,9 @@ choose `ml.g4dn.xlarge` as Instance, set storage to 50GB, click Run Space button
 
 ## Training Process
 
-1. **Run the Training Notebook**
-   - Execute the Jupyter Notebook provided for training. This notebook will:
+1. **Run the Training Notebook** 
+   - Execute the Jupyter Notebook provided for training. Notebook is [training_terratorch.ipynb](training_terratorch.ipynb).
+   - This notebook will:
      - Download the development set of training data.
      - Create necessary directories.
      - Utilize the TerraTorch library to run a sample AI model.
