@@ -45,7 +45,13 @@ choose `ml.g4dn.xlarge` as Instance, set storage to 50GB, click Run Space button
 
 ## Installation Steps after Jupyterlab starts
 
-1. **Update and Install System Packages**
+0. Clone the repository
+   ```bash
+   git clone https://github.com/NASA-IMPACT/rsds-hackathon-24.git
+   ```
+   Alternatively, you can click on the `Git` on top left corner and clone the repository, by pasting the URL `https://github.com/NASA-IMPACT/rsds-hackathon-24.git`
+
+1. **Open Terminal and Update and Install System Packages**
    - Open your terminal and run:
      ```bash
      sudo apt-get update && sudo apt-get install ffmpeg libsm6 libxext6 -y
@@ -54,6 +60,7 @@ choose `ml.g4dn.xlarge` as Instance, set storage to 50GB, click Run Space button
 2. **Install Python Dependencies**
    - Ensure you have Python installed, then install the required packages:
      ```bash
+     cd rsds-hackathon-24
      pip install -r requirements.txt
      ```
 
