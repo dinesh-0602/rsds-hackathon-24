@@ -134,9 +134,15 @@ Participants must provide the following:
 you can use the following formula and Python code snippet for calculating the IoU metric. This will be used for evaluation.
 
 **Formula:**
+
 $$
-IoU = \frac{True Positive}{True Positive + False Positive + False Negative}
+IoU = \frac{TP}{TP + FP + FN}
 $$
+
+Where:
+- \(TP\) = True Positive
+- \(FP\) = False Positive
+- \(FN\) = False Negative
 
 
 **Python Code:**
