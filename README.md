@@ -9,8 +9,14 @@ This repository is intended for setups required for RSDS Hackathon **Data Driven
   - [Getting Started](#getting-started)
   - [Installation Steps after Jupyterlab starts](#installation-steps-after-jupyterlab-starts)
   - [Training Process](#training-process)
-  - [Monitoring and Evaluation](#monitoring-and-evaluation)
+  - [Inference details](#inference-details)
+  - [Hackathon Evaluation Details](#hackathon-evaluation-details)
     - [IoU Metric Calculation](#iou-metric-calculation)
+  - [References](#references)
+    - [TerraTorch base repository](#terratorch-base-repository)
+    - [Terratorch Quick Start documentation](#terratorch-quick-start-documentation)
+    - [albumentations documentation](#albumentations-documentation)
+    - [Dataset](#dataset)
 
 ## Project Overview
 
@@ -87,17 +93,43 @@ wandb init
 cd <path to experiment>
 wandb sync
 ```
-## Monitoring and Evaluation
 
-Participants are required to provide a notebook that demonstrates how to:
-- Run the trained model.
-- Retrieve data from Hugging Face datasets.
-- Calculate performance metrics, specifically Intersection over Union (IoU). The implementation details is provided below.
-- Test split will not be provided, but will functionally the same as the training / validation data format.
+## Inference details
+
+To run inference using the TerraTorch library, you can use the following command:
+terratorch predict -c <path_to_config_file> --ckpt_path<path_to_checkpoint> --predict_output_dir <path_to_output_dir> --data.init_args.predict_data_root <path_to_input_dir>
+
+## Hackathon Evaluation Details 
+
+Participants must provide the following:
+
+1. **Training Notebook**:
+   - A Jupyter Notebook to run the model training.
+   - Include the trained model weights and necessary logs.
+   - Ensure the notebook is easy to run for the judges.
+
+2. **Model Improvement Documentation**:
+   - A comprehensive list of attempts to improve model performance.
+   - Include results for each attempt.
+   - Judges will evaluate the level of effort, decision-making process, and results.
+
+3. **Performance Metrics Calculation**:
+   - Calculate Intersection over Union (IoU) as the performance metric.
+   - See `inference_terratorch.ipynb` for details on testing the model.
+
+4. **Inference Notebook**:
+   - A final notebook to run model inference.
+   - The test split will not be provided but will have the same format as the training/validation data.
+   - Judges will use this notebook to calculate the IoU score, so ensure all steps are clearly shown.
+   - The notebook will be run with a held-out set of data, so do not expect 100% accuracy.
+
+5. **TerraTorch Documentation**:
+   - Refer to the [config_explainer.md](configs/config_explainer.md) file for more details. You need to understand the configuration details for potential model improvements.
+   - Refer to the TerraTorch [Quick Start](https://ibm.github.io/terratorch/quick_start/) documentation for more details on running model inference and configuration details.
 
 ### IoU Metric Calculation
 
-For 2D multiband data, you can use the following formula and Python code snippet:
+you can use the following formula and Python code snippet for calculating the IoU metric. This will be used for evaluation.
 
 **Formula:**
 $$
@@ -112,3 +144,16 @@ def calculate_iou(y_true, y_pred):
     union = np.logical_or(y_true, y_pred)
     iou_score = np.sum(intersection) / np.sum(union)
     return iou_score
+```
+## References
+
+### TerraTorch base repository
+- [TerraTorch](https://github.com/IBM/terratorch)
+### Terratorch Quick Start documentation
+- [Quick Start](https://ibm.github.io/terratorch/quick_start/)
+### albumentations documentation
+- [Albumentations](https://albumentations.ai/docs/)
+### Dataset
+- [HLS Burn Scars dataset](https://huggingface.co/datasets/Muthukumaran/fire_scars_hackathon_dataset)
+- [HLS data](https://hls.gsfc.nasa.gov/hls-data/)
+- [Burn Scars](https://www.weather.gov/sew/burnscar)
