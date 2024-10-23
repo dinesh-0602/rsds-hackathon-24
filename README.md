@@ -91,8 +91,9 @@ wandb init
 
 ```bash
 cd <path to experiment>
-wandb sync
+wandb sync <path_to_tensorboard_log_file>
 ```
+> **Note:** Sync needs to be run every time you want to sync the TensorBoard log file to Weights & Biases (wandb).
 
 ## Inference details
 
