@@ -165,3 +165,4 @@ def calculate_iou(y_true, y_pred):
 - IBM for providing the TerraTorch library
 - NASA-IMPACT for providing the HLS data, code, and instructions
 - [IEEE Geoscience and Remote Sensing Society Earth Science Informatics Technical Committee](https://www.grss-ieee.org/technical-committees/earth-science-informatics/) for organizing the hackathon and providing funding for the resources.
+- [AWS](https://aws.amazon.com/) for providing the SageMaker resources.
