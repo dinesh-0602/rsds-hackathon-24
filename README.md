@@ -1,6 +1,6 @@
 # Data Driven AI for Remote Sensing
 
-This repository is intended for setups required for RSDS Hackathon **Data Driven AI for Remote Sensing**. It leverage and AWS SageMaker for building remote sensing AI applications. This README provides a comprehensive guide to get you started with the project setup, training, and evaluation criteria for hackathon.
+This repository is intended for setups required for IEEE RSDS Hackathon **Data Driven AI for Remote Sensing**. It leverage and AWS SageMaker for building remote sensing AI applications. This README provides a comprehensive guide to get you started with the project setup, training, and evaluation criteria for hackathon. 
 
 ## Table of Contents
 - [Data Driven AI for Remote Sensing](#data-driven-ai-for-remote-sensing)
@@ -17,6 +17,7 @@ This repository is intended for setups required for RSDS Hackathon **Data Driven
     - [Terratorch Quick Start documentation](#terratorch-quick-start-documentation)
     - [albumentations documentation](#albumentations-documentation)
     - [Dataset](#dataset)
+  - [Acknowledgements](#acknowledgements)
 
 ## Project Overview
 
@@ -158,3 +159,9 @@ def calculate_iou(y_true, y_pred):
 - [HLS Burn Scars dataset](https://huggingface.co/datasets/Muthukumaran/fire_scars_hackathon_dataset)
 - [HLS data](https://hls.gsfc.nasa.gov/hls-data/)
 - [Burn Scars](https://www.weather.gov/sew/burnscar)
+
+## Acknowledgements
+
+- IBM for providing the TerraTorch library
+- NASA-IMPACT for providing the HLS data, code, and instructions
+- [IEEE Geoscience and Remote Sensing Society Earth Science Informatics Technical Committee](https://www.grss-ieee.org/technical-committees/earth-science-informatics/) for organizing the hackathon and providing funding for the resources.
