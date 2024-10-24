@@ -69,7 +69,7 @@ data:
     test_label_data_root: datasets/fire_scars_train_val/validation
     img_grep: "*_merged.tif"
     label_grep: "*.mask.tif"
-    means:    # https://github.com/IBM/terratorch/blob/740480fa2986c2aea21af9a7d223eaf50982d904/examples/confs/burn_scars.yaml#L73
+    means:    
       - 0.033349706741586264
       - 0.05701185520536176
       - 0.05889748132001316
