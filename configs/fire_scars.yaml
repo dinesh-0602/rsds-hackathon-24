@@ -19,9 +19,9 @@ trainer:
     - class_path: EarlyStopping
       init_args:
         monitor: val/loss
-        patience: 40       ##########
+        patience: 40       
 
-  max_epochs: 200            ##########
+  max_epochs: 200            
   check_val_every_n_epoch: 1
   log_every_n_steps: 50
   enable_checkpointing: true
@@ -57,7 +57,7 @@ data:
           width: 224
       - class_path: albumentations.HorizontalFlip
         init_args:
-          p: 0.5   #############
+          p: 0.5
       - class_path: ToTensorV2
     no_data_replace: 0
     no_label_replace: -1
@@ -70,20 +70,19 @@ data:
     img_grep: "*_merged.tif"
     label_grep: "*.mask.tif"
     means:    
-      - 0.033349706741586264
-      - 0.05701185520536176
-      - 0.05889748132001316
-      - 0.2323245113436119
-      - 0.1972854853760658
-      - 0.11944914225186566
-    stds:    # https://github.com/IBM/terratorch/blob/740480fa2986c2aea21af9a7d223eaf50982d904/examples/confs/burn_scars.yaml#L80
-      - 0.02269135568823774
-      - 0.026807560223070237
-      - 0.04004109844362779
-      - 0.07791732423672691
-      - 0.08708738838140137
-      - 0.07241979477437814
-    # These are dummy values. Participants need to find a good way to add actual values from the dataset (for each band)
+      - 0.03335
+      - 0.05702
+      - 0.05890
+      - 0.23232
+      - 0.19729
+      - 0.11945
+    stds:
+      - 0.02270
+      - 0.02681
+      - 0.04004
+      - 0.07796
+      - 0.08709
+      - 0.07242
     num_classes: 2
 
 model:
@@ -93,7 +92,7 @@ model:
       decoder: FCNDecoder
       pretrained: true
       backbone: prithvi_vit_100
-      decoder_channels: 256    ############
+      decoder_channels: 128    
       in_channels: 6
       bands:
         - BLUE
@@ -107,7 +106,7 @@ model:
       head_dropout: 0.1
       decoder_num_convs: 4
       head_channel_list:
-        - 256    ###########
+        - 256    
     loss: dice
     plot_on_val: 10
     ignore_index: -1
@@ -123,7 +122,7 @@ model:
 optimizer:
   class_path: torch.optim.Adam
   init_args:
-    lr: 1.5e-5        ###########
+    lr: 1.5e-5        
     weight_decay: 0.05
 lr_scheduler:
   class_path: ReduceLROnPlateau
